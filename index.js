@@ -13,6 +13,8 @@ function getWeapons() {
          <div data-id=${weapon.id}>
           <h3>${weapon.attributes.name}</h3
           <p>${weapon.attributes.category.name}</p>
+          <a href="${weapon.attributes.video_url}">See it in action!</a>
+         
           <button data-id=${weapon.id}>edit</button>
         </div>
         <br><br>`;
