@@ -1,7 +1,11 @@
 const endPoint = "http://localhost:3000/api/v1/weapons";
 
 document.addEventListener("DOMContentLoaded", () => {
-  getWeapons();
+  getWeapons()
+
+  let createWeaponForm = document.querySelector('#create-weapon-form')
+
+  createWeaponForm.addEventListener('submit', (e) => createFormHandler(e) )
 });
 
 function getWeapons() {
@@ -25,4 +29,15 @@ function getWeapons() {
 })
 }
 
+function createFormHandler(e) {
+ e.preventDefault();
+ const nameInput = document.querySelector("#input-name").value;
+ const descriptionInput = document.querySelector("#input-description").value;
+ const videoInput = document.querySelector("#input-video").value;
+ const imageInput = document.querySelector("#input-image").value;
+ const originInput = document.querySelector("#input-origin").value;
+ const categoryInput = document.querySelector("#categories").value;
+ const categoryId = parseInt(categoryInput);
+ postSyllabus(nameInput, descriptionInput, videoInput, imageInput, originInput, categoryInput);
 
+}
