@@ -7,5 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
 function getWeapons() {
   fetch(endPoint)
     .then((res) => res.json())
-    .then((json) => console.log(json));
+    .then(weapons => {
+       weapons.data.forEach(weapon => {
+         const weaponMarkup = `
+         <div data-id=${weapon.id}>
+          <h3>${weapon.attributes.name}</h3
+          <p>${weapon.attributes.category.name}</p>
+          <button data-id=${weapon.id}>edit</button>
+        </div>
+        <br><br>`;
+
+       document.querySelector('#weapon-container').innerHTML += weaponMarkup
+    })
+})
 }
