@@ -17,7 +17,7 @@ function getWeapons() {
          <div data-id=${weapon.id}>
           <h3>${weapon.attributes.name}</h3>
           <p>${weapon.attributes.category.name}</p>
-          <img src="${weapon.attributes.image_url}" height="200" width="250">
+          <img src="${weapon.attributes.image_url}" alt="Just imagine..." height="200" width="250">
           <a href="${weapon.attributes.video_url}">See it in action!</a>
          
           <button data-id=${weapon.id}>edit</button>
@@ -38,6 +38,6 @@ function createFormHandler(e) {
  const originInput = document.querySelector("#input-origin").value;
  const categoryInput = document.querySelector("#categories").value;
  const categoryId = parseInt(categoryInput);
- postSyllabus(nameInput, descriptionInput, videoInput, imageInput, originInput, categoryInput);
+ postWeapon(nameInput, descriptionInput, videoInput, imageInput, originInput, categoryInput);
 
 }
