@@ -41,3 +41,32 @@ function createFormHandler(e) {
  postWeapon(nameInput, descriptionInput, videoInput, imageInput, originInput, categoryInput);
 
 }
+
+function postWeapon(name, description, video_url, image_url, origin, category_id) {
+  
+  let bodyData = {name, description, video_url, image_url, origin, category_id};
+
+   fetch(endPoint, {
+    
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify(bodyData)
+   })
+     .then(response => response.json())
+     .then((weapon) => {
+      console.log(weapon);
+       const weaponData = weapon.data
+       const weaponMarkup = `
+         <div data-id=${weapon.id}>
+          <h3>${weaponData.attributes.name}</h3>
+          <p>${weaponData.attributes.category.name}</p>
+          <img src="${weaponData.attributes.image_url}" alt="Just imagine..." height="200" width="250">
+          <a href="${weaponData.attributes.video_url}">See it in action!</a>
+          <button data-id=${weaponData.id}>edit</button>
+    </div>
+    <br><br>`;
+
+       document.querySelector("#weapon-container").innerHTML += weaponMarkup;
+     });
+ 
+}
