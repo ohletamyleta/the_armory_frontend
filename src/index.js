@@ -16,7 +16,7 @@ function getWeapons() {
 
         const newWeapon = new Weapon(weapon.id, weapon.attributes)
 
-        document.querySelector("#weapon-container").innerHTML += newweapon.renderweaponCard();
+        document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
     })
 })
 }
@@ -68,7 +68,7 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
      
         const newWeapon = new Weapon(weapon.data.id, weapon.data.attributes);
 
-        document.querySelector("#weapon-container").innerHTML += newweapon.renderweaponCard();
+        document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
     
     });
  

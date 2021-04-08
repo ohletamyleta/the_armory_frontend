@@ -7,7 +7,7 @@ class Weapon {
     this.video_url = weaponAttributes.video_url;
     this.origin = weaponAttributes.origin;
     this.category = weaponAttributes.category;
-    weapon.all.push(this);
+    Weapon.all.push(this);
   }
 
   renderWeaponCard() {
