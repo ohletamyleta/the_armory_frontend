@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -11,12 +7,50 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="src/weapon.js"></script>
+    <script type="text/javascript" src="src/index.js"></script>
+   
   </head>
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  
+<div class="form-container">
+
+  <form id="create-weapon-form" style="">
+    <h2>Add a Weapon to The Armory!</h2>
+    <h3><em>~please remember that The Armory is a gun free zone~</em></h3>
+
+    <input id='input-name' type="text" name="name" value="" placeholder="Enter your weapon name" class="input-text">
+    <br><br>
+    <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Describe your weapon"></textarea>
+    <br><br>
+    <input id='input-video' type="text" name="video_url" value="" placeholder="Add a link to a video demo" class="input-text">
+    <br><br>
+    <textarea id='input-origin'  name="origin" rows="4" cols="40" value="" placeholder="Explain your weapon's origin"></textarea>
+    <br><br>
+    <input id='input-image' type="text" name="image_url" value="" placeholder="Link to weapon photo" class="input-text">
+    <br><br>
+
+    <h4>Choose A Category:</h4>
+    <p>Blunt things slam, sharp things stab or slash, projectiles are thrown or launched, legendary weapons are fictional, and nonconformists don't fit in any of those categories!</p>
+    <select id="categories" name="categories">
+      <option value="6">Blunt</option>
+      <option value="7">Sharp</option>
+      <option value="8">Projectile</option>
+      <option value="9">Legendary</option>
+      <option value="10">Nonconformist</option>
+    </select>
+    <br><br>
+
+    <input id= 'create-button' type="submit" name="submit" value="Add your weapon" class="submit">
+  </form>
+
+</div>
+
+    <div id="weapon-container">
+    </div>
+
+
+
     
     <script src="" async defer></script>
   </body>
