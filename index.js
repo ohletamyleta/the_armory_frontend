@@ -13,7 +13,13 @@ function getWeapons() {
     .then((res) => res.json())
     .then(weapons => {
        weapons.data.forEach(weapon => {
-         const weaponMarkup = `
+        render(weapon)
+    })
+})
+}
+
+function render(weapon) {
+ const weaponMarkup = `
          <div data-id=${weapon.id}>
           <h3>${weapon.attributes.name}</h3>
           <p>${weapon.attributes.category.name}</p>
@@ -24,9 +30,7 @@ function getWeapons() {
         </div>
         <br><br>`;
 
-       document.querySelector('#weapon-container').innerHTML += weaponMarkup
-    })
-})
+ document.querySelector("#weapon-container").innerHTML += weaponMarkup;
 }
 
 function createFormHandler(e) {
@@ -56,17 +60,7 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
      .then((weapon) => {
       console.log(weapon);
        const weaponData = weapon.data
-       const weaponMarkup = `
-         <div data-id=${weapon.id}>
-          <h3>${weaponData.attributes.name}</h3>
-          <p>${weaponData.attributes.category.name}</p>
-          <img src="${weaponData.attributes.image_url}" alt="Just imagine..." height="200" width="250">
-          <a href="${weaponData.attributes.video_url}">See it in action!</a>
-          <button data-id=${weaponData.id}>edit</button>
-    </div>
-    <br><br>`;
-
-       document.querySelector("#weapon-container").innerHTML += weaponMarkup;
+        render(weaponData)
      });
  
 }
