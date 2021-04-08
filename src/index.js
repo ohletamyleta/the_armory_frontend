@@ -3,9 +3,18 @@ const endPoint = "http://localhost:3000/api/v1/weapons";
 document.addEventListener("DOMContentLoaded", () => {
   getWeapons()
 
-  let createWeaponForm = document.querySelector('#create-weapon-form')
+  const createWeaponForm = document.querySelector('#create-weapon-form')
 
   createWeaponForm.addEventListener('submit', (e) => createFormHandler(e) )
+
+  const weaponContainer = document.querySelector('#weapon-container')
+  
+  weaponContainer.addEventListener('click', e => {
+     const id = parseInt(e.target.dataset.id);
+    //  debugger;
+     const weapon = Weapon.findById(id);
+     console.log(weapon);
+ })
 });
 
 function getWeapons() {

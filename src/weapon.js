@@ -22,10 +22,10 @@ class Weapon {
             </div>
             <br><br>`;
   }
-
-  static findById(id) {
-    return this.all.find((weapon) => weapon.id === id);
-  }
+ 
+    static findById = id => {
+      return this.all.find((weapon) => parseInt(weapon.id) === id);
+    }
 }
 
 Weapon.all = [];
