@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   weaponContainer.addEventListener('click', e => {
      const id = parseInt(e.target.dataset.id);
-    //  debugger;
      const weapon = Weapon.findById(id);
      document.querySelector("#update-weapon").innerHTML = weapon.renderUpdateForm();
+     console.log('update form')
  })
 });
 
