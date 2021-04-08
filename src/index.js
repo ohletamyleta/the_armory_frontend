@@ -23,9 +23,10 @@ function render(weapon) {
          <div data-id=${weapon.id}>
           <h3>${weapon.attributes.name}</h3>
           <p>${weapon.attributes.category.name}</p>
+          <p>${weapon.attributes.origin}</p>
           <img src="${weapon.attributes.image_url}" alt="Just imagine..." height="200" width="250">
           <a href="${weapon.attributes.video_url}">See it in action!</a>
-         
+
           <button data-id=${weapon.id}>edit</button>
         </div>
         <br><br>`;
