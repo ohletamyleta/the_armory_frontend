@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
      const id = parseInt(e.target.dataset.id);
     //  debugger;
      const weapon = Weapon.findById(id);
-     console.log(weapon);
+     document.querySelector("#update-weapon").innerHTML = weapon.renderUpdateForm();
  })
 });
 
