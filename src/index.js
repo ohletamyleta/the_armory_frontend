@@ -70,12 +70,13 @@ function updateFormHandler(e) {
 
   const id = parseInt(e.target.dataset.id);
   const weapon = Weapon.findById(id);
-  const name = document.querySelector("#input-name").value;
-  const description = document.querySelector("#input-description").value;
-  const video_url = document.querySelector("#input-video").value;
-  const image_url = document.querySelector("#input-image").value;
-  const origin = document.querySelector("#input-origin").value;
+  const name = document.querySelector("#update-name").value;
+  const description = document.querySelector("#update-description").value;
+  const video_url = document.querySelector("#update-video-url").value;
+  const image_url = document.querySelector("#update-image-url").value;
+  const origin = document.querySelector("#update-origin").value;
   const category = document.querySelector("#categories").value;
+
 
   patchWeapon(id, name, description, video_url, image_url, origin, category)
 
@@ -85,15 +86,17 @@ function patchWeapon(id, name, description, video_url, image_url, origin, catego
   const bodyJSON = { id, name, description, video_url, image_url, origin, category }
   fetch(`http://localhost:3000/api/v1/weapons/${id}`, {
     method: 'PATCH',
-    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    headers: { 
+      "Content-Type": "application/json", 
+      "Accept": "application/json" },
     body: JSON.stringify(bodyJSON),
   })
     .then(res => res.json())
-    .then(updatedWeapon => console.log(updatedWeapon));
+    .then(console.log("updatedWeapon"));
 
-      document.querySelector(
-        "#weapon-container"
-      ).innerHTML += updatedWeapon.renderWeaponCard();
+      // document.querySelector(
+      //   "#weapon-container"
+      // ).innerHTML += updatedWeapon.renderWeaponCard();
     };
 
 

@@ -27,29 +27,30 @@ class Weapon {
       return this.all.find((weapon) => parseInt(weapon.id) === id);
     }
 
-    renderUpdateForm() {
+    renderUpdateForm = () => {
+      console.log(`${this.name}`)
       return `
       <form data-id=${this.id} >
         <h3>Modify A Weapon!</h3>
 
         <label>Name</label>
-        <input id='input-name' type="text" name="name" value'"${this.name}" class="input-text">
+        <input id='update-name' type="text" name="name" value="${this.name}" class="input-text">
         <br><br>
 
         <label>Origin</label>
-        <textarea id='input-name' type="text" name="name" rows="4" cols="40" value="">${this.origin}</textarea>
+        <textarea id='update-origin' type="text" name="name" rows="4" cols="40" value="">${this.origin}</textarea>
         <br><br>
 
         <label>Description</label>
-        <textarea id='input-description' name="description" rows="8" cols="80" value="">${this.description}</textarea>
+        <textarea id='update-description' name="description" rows="8" cols="80" value="">${this.description}</textarea>
         <br><br>
 
         <label>Video Link</label>
-        <input id='input-url' type="text" name="image" value="${this.video_url}" class="input-text">
+        <input id='update-video-url' type="text" name="image" value="${this.video_url}" class="input-text">
         <br><br>
       
         <label>Image Link</label>
-        <input id='input-url' type="text" name="image" value="${this.image_url}" class="input-text">
+        <input id='update-image-url' type="text" name="image" value="${this.image_url}" class="input-text">
         <br><br>
       
         <label>Category</label>
