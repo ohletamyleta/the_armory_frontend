@@ -12,15 +12,31 @@ class Weapon {
 
   renderWeaponCard() {
     return `
-            <div data-id=${this.id}>
-              <h3>${this.name}</h3>
-              <p>${this.category.name}</p>
-              <p>${this.origin}</p>
-              <img src=${this.image_url} alt="Just imagine..."  height="200" width="250">
-              <a href="${this.video_url}">See it in action!</a>
-              <button data-id=${this.id}>edit</button>
+    <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+              </div>
             </div>
-            <br><br>`;
+          </div>
+        </div>
+      </div>
+    </div>`;
+            // `<div data-id=${this.id}>
+            //   <h3>${this.name}</h3>
+            //   <p>${this.category.name}</p>
+            //   <p>${this.origin}</p>
+            //   <img src=${this.image_url} alt="Just imagine..."  height="200" width="250">
+            //   <a href="${this.video_url}">See it in action!</a>
+            //   <button data-id=${this.id}>edit</button>
+            // </div>
+            // <br><br>`;
+
   }
  
     static findById = id => {
