@@ -94,9 +94,6 @@ function patchWeapon(id, name, description, video_url, image_url, origin, catego
     .then(res => res.json())
     .then(console.log("updatedWeapon"));
 
-      // document.querySelector(
-      //   "#weapon-container"
-      // ).innerHTML += updatedWeapon.renderWeaponCard();
     };
 
 
