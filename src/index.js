@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
      const weapon = Weapon.findById(id);
      document.querySelector("#update-weapon").innerHTML = weapon.renderUpdateForm();
    });
-    document.querySelector('#update-weapon').addEventListener('submit', e => updateFormHandler(e))
+    // document.querySelector('#update-weapon').addEventListener('submit', e => updateFormHandler(e))
 
 });
 
