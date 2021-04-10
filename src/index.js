@@ -58,7 +58,7 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
     
   function deleteWeapon() {
 
-    fetch(`http://localhost:3000/api/v1/weapons/${id}`{
+    fetch(`http://localhost:3000/api/v1/weapons/${id}`, {
       
     method: 'DELETE',
     }) 
