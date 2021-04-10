@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createWeaponForm.addEventListener('submit', (e) => createFormHandler(e) )
 
-  const destroyWeaponTrigger = document.querySelector('#weapon-container').addEventListener('submit', e => updateFormHandler(e))
+  // const destroyWeaponTrigger = document.querySelector('#weapon-container').addEventListener('submit', e => updateFormHandler(e))
 
  
 });
