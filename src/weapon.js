@@ -12,20 +12,32 @@ class Weapon {
 
   renderWeaponCard() {
     return `
-            <div data-id=${this.id}>
-              <h3>${this.name}</h3>
-              <p>${this.category.name}</p>
-              <p>${this.origin}</p>
-              <img src=${this.image_url} alt="Just imagine..."  height="200" width="250">
+    <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src=${this.image_url} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-text">${this.name}</h3>
+              <h4 class="card-text"><em>Category: ${this.category.name}</em></h4>
+              <h5 class="card-text">Origin: ${this.origin}</h5>
+              <p class="card-text">${this.description}</p>
               <a href="${this.video_url}">See it in action!</a>
-              <button data-id=${this.id}>edit</button>
+               <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <button type="button" class="btn btn-primary" id="update-weapon">Edit</button>
+                </div>
+              </div>
             </div>
-            <br><br>`;
+          </div>
+        </div>
+      </div>
+    </div>`;
   }
 
-  static findById(id) {
-    return this.all.find((weapon) => weapon.id === id);
-  }
+
+  static findById = (id) => {
+    return this.all.find((weapon) => parseInt(weapon.id) === id);
+  };
+
 }
 
 Weapon.all = [];

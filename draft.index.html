@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script type="text/javascript" src="src/weapon.js"></script>
+    <script type="text/javascript" src="src/index.js"></script>
+   
+  </head>
+  <body>
+  
+<div class="form-container">
+
+  <form id="create-weapon-form" style="">
+    <h2>Add a Weapon to The Armory!</h2>
+    <h5><em>~please remember that The Armory is a gun free zone~</em></h5>
+
+    <input id='input-name' type="text" name="name" value="" placeholder="Enter your weapon name" class="input-text">
+    <br><br>
+    <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Describe your weapon"></textarea>
+    <br><br>
+    <input id='input-video' type="text" name="video_url" value="" placeholder="Add a link to a video demo" class="input-text">
+    <br><br>
+    <textarea id='input-origin'  name="origin" rows="4" cols="40" value="" placeholder="Explain your weapon's origin"></textarea>
+    <br><br>
+    <input id='input-image' type="text" name="image_url" value="" placeholder="Link to weapon photo" class="input-text">
+    <br><br>
+
+    <h4>Choose A Category:</h4>
+    <p>Blunt things slam, sharp things stab or slash, projectiles are thrown or launched, legendary weapons are fictional, and nonconformists don't fit in any of those categories!</p>
+    <select id="categories" name="categories">
+      <option value="1">Blunt</option>
+      <option value="2">Sharp</option>
+      <option value="3">Projectile</option>
+      <option value="4">Legendary</option>
+      <option value="5">Nonconformist</option>
+    </select>
+    <br><br>
+
+    <input id= 'create-button' type="submit" name="submit" value="Add your weapon" class="submit">
+  </form>
+
+</div>
+
+<div id="update-weapon">
+</div>
+
+<div id="weapon-container">
+
+</div>
+
+    
+  <script src="" async defer></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

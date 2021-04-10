@@ -3,9 +3,11 @@ const endPoint = "http://localhost:3000/api/v1/weapons";
 document.addEventListener("DOMContentLoaded", () => {
   getWeapons()
 
-  let createWeaponForm = document.querySelector('#create-weapon-form')
+  const createWeaponForm = document.querySelector('#create-weapon-form')
 
   createWeaponForm.addEventListener('submit', (e) => createFormHandler(e) )
+
+ 
 });
 
 function getWeapons() {
@@ -15,7 +17,7 @@ function getWeapons() {
        weapons.data.forEach(weapon => {
 
         const newWeapon = new Weapon(weapon.id, weapon.attributes)
-
+ 
         document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
     })
 })
@@ -37,9 +39,7 @@ function createFormHandler(e) {
 function postWeapon(name, description, video_url, image_url, origin, category_id) {
   
   let bodyData = {name, description, video_url, image_url, origin, category_id};
-
    fetch(endPoint, {
-    
      method: "POST",
      headers: { "Content-Type": "application/json" },
      body: JSON.stringify(bodyData)
@@ -47,11 +47,15 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
      .then(response => response.json())
      .then((weapon) => {
 
-     
         const newWeapon = new Weapon(weapon.data.id, weapon.data.attributes);
 
         document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
     
     });
- 
-}
+  }
+    
+
+
+
+
+
