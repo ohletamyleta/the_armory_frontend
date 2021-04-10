@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createWeaponForm.addEventListener('submit', (e) => createFormHandler(e) )
 
+
   const deleteWeaponTrigger = document.querySelector('#weapon-container')
   
   deleteWeaponTrigger.addEventListener("click", (e) => deleteWeapon(e))
+
 
  
 });
@@ -58,7 +60,8 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
     });
   }
     
-  function deleteWeapon(e) {
+
+function deleteWeapon(e) {
 
     const id = parseInt(e.target.dataset.id);
     const weapon = Weapon.findById(id);
@@ -71,6 +74,7 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
    
 
     }
+
 
 
 
