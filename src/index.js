@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getWeapons() {
   fetch(endPoint)
-    .then((res) => res.json())
+    .then(res => res.json())
     .then(weapons => {
        weapons.data.forEach(weapon => {
 
@@ -42,20 +42,21 @@ function createFormHandler(e) {
 
 function postWeapon(name, description, video_url, image_url, origin, category_id) {
   
-  let bodyData = {name, description, video_url, image_url, origin, category_id};
-   fetch(endPoint, {
+  const bodyData = {name, description, video_url, image_url, origin, category_id};
+
+   fetch("http://localhost:3000/api/v1/weapons", {
      method: "POST",
      headers: { "Content-Type": "application/json" },
-     body: JSON.stringify(bodyData)
+     body: JSON.stringify(bodyData),
    })
-     .then(response => response.json())
+     .then((response) => response.json())
      .then((weapon) => {
+       const newWeapon = new Weapon(weapon.data.id, weapon.data.attributes);
 
-        const newWeapon = new Weapon(weapon.data.id, weapon.data.attributes);
-
-        document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
-    
-    });
+       document.querySelector(
+         "#weapon-container"
+       ).innerHTML += newWeapon.renderWeaponCard();
+     });
   }
     
   function deleteWeapon(e) {
