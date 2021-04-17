@@ -1,5 +1,9 @@
 const endPoint = "http://localhost:3000/api/v1/weapons";
 
+function pageReload() {
+  window.location.reload(true);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   getWeapons()
 
@@ -57,6 +61,7 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
          "#weapon-container"
        ).innerHTML += newWeapon.renderWeaponCard();
      });
+     pageReload();
   }
     
   function deleteWeapon(e) {
@@ -67,11 +72,12 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
     fetch(`http://localhost:3000/api/v1/weapons/${id}`, {
       
     method: 'DELETE',
-    }) 
-    
+    })
+  
+  
    
-
-    }
+  
+  }
 
 
 
