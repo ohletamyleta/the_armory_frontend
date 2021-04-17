@@ -70,13 +70,14 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
     const weapon = Weapon.findById(id);
       
     fetch(`http://localhost:3000/api/v1/weapons/${id}`, {
-      
-    method: 'DELETE',
+      method: "DELETE",
     })
-  
-  
-   
-  
+    .then(() => {
+      pageReload(true);
+      
+     })
+    // 
+     
   }
 
 
