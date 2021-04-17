@@ -6,6 +6,7 @@ function pageReload() {
 
 document.addEventListener("DOMContentLoaded", () => {
   getWeapons()
+  getCategories()
 
   const createWeaponForm = document.querySelector('#create-weapon-form')
 
@@ -29,6 +30,20 @@ function getWeapons() {
         document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
     })
 })
+}
+
+function getCategories() {
+  fetch(endPoint)
+    .then((res) => res.json())
+    .then((categories) => {
+      categories.data.forEach((category) => {
+        const newCategory = new Category(category.id, Category.attributes);
+
+        // document.querySelector(
+        //   "#weapon-container"
+        // ).innerHTML += newWeapon.renderWeaponCard();
+      });
+    });
 }
 
 function createFormHandler(e) {
