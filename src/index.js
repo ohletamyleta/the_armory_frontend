@@ -7,7 +7,7 @@ function pageReload() {
 
 document.addEventListener("DOMContentLoaded", () => {
   getWeapons()
-  // getCategories()
+  getCategories()
 
   const createWeaponForm = document.querySelector('#create-weapon-form')
 
@@ -33,19 +33,23 @@ function getWeapons() {
 })
 }
 
-// function getCategories() {
-//   fetch(endPoint)
-//     .then((res) => res.json())
-//     .then((categories) => {
-//       categories.data.forEach((category) => {
-//         const newCategory = new Category(category.id, Category.attributes);
+function getCategories() {
+  fetch("http://localhost:3000/api/v1/categories")
+    .then((res) => res.json())
+    .then((categories) => {
+      categories.data.forEach(category => {
 
-//         // document.querySelector(
-//         //   "#weapon-container"
-//         // ).innerHTML += newWeapon.renderWeaponCard();
-//       });
-//     });
-// }
+        const newCategory = new Category(category.id, category.attributes)
+
+        let sel = document.getElementById('categories');
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(category.name));
+        opt.value = "${category.id}"
+        sel.appendChild(opt);
+      
+      });
+    });
+}
 
 function createFormHandler(e) {
  e.preventDefault();
@@ -77,7 +81,6 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
          "#weapon-container"
        ).innerHTML += newWeapon.renderWeaponCard();
      });
-     deleteCard();
      pageReload();
   }
     

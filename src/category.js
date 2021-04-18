@@ -6,6 +6,11 @@ class Category {
     Category.all.push(this);
   }
 
+  // loadOptions() {
+
+
+  // }
+
 }
 
  Category.all = [];
