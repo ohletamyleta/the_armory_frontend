@@ -35,22 +35,26 @@ function getWeapons() {
 
 function getCategories() {
   fetch("http://localhost:3000/api/v1/categories")
-    .then((res) => res.json())
+    .then(res => res.json())
+    
     .then(data => console.log(data))
-    .then((categories) => {
-      categories.data.forEach(category => {
 
-        const newCategory = new Category(category.id, category.attributes)
+    // .then(categories => {
+    //   categories.data.forEach(category => {
 
-        let sel = document.getElementById('categories');
-        let opt = document.createElement('option');
-        debugger;
-        opt.appendChild( document.createTextNode(category.name));
-        opt.value = category.id
-        sel.appendChild(opt);
+    //     const newCategory = new Category(category.id, category.attributes)
+
+    //     document.querySelector("#select").innerHTML += newCategory.loadOptions();
+
+        // let sel = document.getElementById('categories');
+        // let opt = document.createElement('option');
+        // // debugger;
+        // opt.appendChild( document.createTextNode("${category.name}"));
+        // opt.value = category.id
+        // sel.appendChild(opt);
       
-      });
-    });
+    //   });
+    // });
 }
 
 function createFormHandler(e) {
