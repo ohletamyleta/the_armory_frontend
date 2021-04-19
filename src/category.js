@@ -6,18 +6,18 @@ class Category {
     Category.all.push(this);
   }
 
-  loadOptions() {
-    const categories = Category.all
+//   loadOptions() {
+//     const categories = Category.all
 
-    categories.forEach(category => {
-    let sel = document.getElementById('categories');
-    let opt = document.createElement('option');
-    // debugger;
-    opt.appendChild( document.createTextNode(this.name));
-    opt.value = this.id
-    sel.appendChild(opt);
-  })
-}
+//     categories.forEach(category => {
+//     let sel = document.getElementById('categories');
+//     let opt = document.createElement('option');
+//     // debugger;
+//     opt.appendChild( document.createTextNode(this.name));
+//     opt.value = this.id
+//     sel.appendChild(opt);
+//   })
+// }
 
 }
 
