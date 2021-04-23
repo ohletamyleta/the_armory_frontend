@@ -1,7 +1,13 @@
 const endPoint = "http://localhost:3000/api/v1/weapons";
 
+function pageReload() {
+  window.location.reload(true);
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   getWeapons()
+  getCategories()
 
   const createWeaponForm = document.querySelector('#create-weapon-form')
 
@@ -18,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getWeapons() {
   fetch(endPoint)
-    .then((res) => res.json())
+    .then(res => res.json())
     .then(weapons => {
        weapons.data.forEach(weapon => {
 
@@ -27,6 +33,26 @@ function getWeapons() {
         document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
     })
 })
+}
+
+function getCategories() {
+  fetch("http://localhost:3000/api/v1/categories")
+    .then((res) => res.json())
+    .then(data => console.log(data))
+    .then((categories) => {
+      categories.data.forEach(category => {
+
+        const newCategory = new Category(category.id, category.attributes)
+
+        let sel = document.getElementById('categories');
+        let opt = document.createElement('option');
+        debugger;
+        opt.appendChild( document.createTextNode(category.name));
+        opt.value = category.id
+        sel.appendChild(opt);
+      
+      });
+    });
 }
 
 function createFormHandler(e) {
@@ -44,20 +70,22 @@ function createFormHandler(e) {
 
 function postWeapon(name, description, video_url, image_url, origin, category_id) {
   
-  let bodyData = {name, description, video_url, image_url, origin, category_id};
-   fetch(endPoint, {
+  const bodyData = {name, description, video_url, image_url, origin, category_id};
+
+   fetch("http://localhost:3000/api/v1/weapons", {
      method: "POST",
      headers: { "Content-Type": "application/json" },
-     body: JSON.stringify(bodyData)
+     body: JSON.stringify(bodyData),
    })
-     .then(response => response.json())
+     .then((response) => response.json())
      .then((weapon) => {
+       const newWeapon = new Weapon(weapon.data.id, weapon.data.attributes);
 
-        const newWeapon = new Weapon(weapon.data.id, weapon.data.attributes);
-
-        document.querySelector("#weapon-container").innerHTML += newWeapon.renderWeaponCard();
-    
-    });
+       document.querySelector(
+         "#weapon-container"
+       ).innerHTML += newWeapon.renderWeaponCard();
+     });
+     pageReload();
   }
     
 
@@ -67,13 +95,20 @@ function deleteWeapon(e) {
     const weapon = Weapon.findById(id);
       
     fetch(`http://localhost:3000/api/v1/weapons/${id}`, {
+      method: "DELETE",
+    })
+    .then(() => {
+      function deleteCard() {
+      let elem = document.getElementById(id);
+      elem.parentNode.removeChild(elem);
+      }
+      deleteCard();
+      pageReload(true);
       
-    method: 'DELETE',
-    }) 
-    
-   
-
-    }
+     })
+    // 
+     
+  }
 
 
 

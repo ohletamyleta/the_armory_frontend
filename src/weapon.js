@@ -12,7 +12,7 @@ class Weapon {
 
   renderWeaponCard() {
     return `
-    <div class="col-md-4">
+    <div class="col-md-4" id="${this.id}">
           <div class="card mb-4 shadow-sm">
             <img src=${this.image_url} class="card-img-top" alt="...">
             <div class="card-body">

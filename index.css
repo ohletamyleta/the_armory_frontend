@@ -31,3 +31,11 @@ footer {
 footer p {
   margin-bottom: .25rem;
 
+}
+
+.weapon-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
