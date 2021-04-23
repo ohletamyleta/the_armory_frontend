@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,6 +44,7 @@
   <link href="index.css" rel="stylesheet">
   </head>
   <body>
+
  <section class="jumbotron text-center">
     <div class="container">
       <h1><strong>The Armory</strong></h1>
@@ -54,37 +55,55 @@
   
   <div class="form-container text-center">
 
-  <form id="create-weapon-form" style="">
-    <h2>Add a Weapon to The Armory!</h2>
-    <h3><em>~please remember that The Armory is a gun free zone~</em></h3>
 
-    <input id='input-name' type="text" name="name" value="" placeholder="Enter your weapon name" class="input-text">
+
+  <form id="create-weapon-form" style="">
+    <h4>Add a Weapon to The Armory!</h4>
+
+    <input id='input-name' type="text" name="name" value="" placeholder="Enter weapon name" class="input-text">
     <br><br>
-    <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Describe your weapon"></textarea>
+    <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Describe the weapon"></textarea>
     <br><br>
-    <input id='input-video' type="text" name="video_url" value="" placeholder="Add a link to a video demo" class="input-text">
+    <input id='input-video' type="text" name="video_url" value="" placeholder="Add a link to a video" class="input-text">
     <br><br>
-    <textarea id='input-origin'  name="origin" rows="4" cols="40" value="" placeholder="Explain your weapon's origin"></textarea>
+    <textarea id='input-origin'  name="origin" rows="4" cols="40" value="" placeholder="Explain the weapon's origin"></textarea>
     <br><br>
     <input id='input-image' type="text" name="image_url" value="" placeholder="Link to weapon photo" class="input-text">
     <br><br>
 
     <h4>Choose A Category:</h4>
-    <p>Blunt things slam, sharp things stab or slash, projectiles are thrown or launched, legendary weapons are fictional, and nonconformists don't fit in any of those categories!</p>
+    <p>Blunt things slam, sharp things stab or slash, projectiles are thrown or launched, legendary weapons are fictional, and nonconformists don't fit in any of those categories (or fit in more than one!)!</p>
     <select id="categories" name="categories">
-      
+
     </select>
     <br><br>
 
-    <input id= 'create-button' type="submit" name="submit" value="Add your weapon" class="submit">
+    <button type="button" class="btn btn-dark">Create Weapon</button>
   </form>
 
 </div>
 
+
     <div class="weapon-container" id="weapon-container">
+
+  </section>
+
+ <div class="container">
+   <div id="weapon-container"> 
+    <div class="album py-5 bg-light">
+      <div class="row row-cols-3">
+        
+        </div>
+      </div>
+
     </div>
+  </div>
 
 
+
+
+
+</main>
 
     
     <script src="" async defer></script>
@@ -92,9 +111,17 @@
 </html>
 
 
-<!-- 
-      <option value="1">Blunt</option>
-      <option value="2">Sharp</option>
-      <option value="3">Projectile</option>
-      <option value="4">Legendary</option>
-      <option value="5">Nonconformist</option> -->
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+<script src="" async defer></script>
+</body>
+      </html>
+

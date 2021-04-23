@@ -1,3 +1,4 @@
+
 Update Weapon
 Modify A Weapon!
     <label>Name</label>
@@ -34,5 +35,3 @@ Modify A Weapon!
 </form>
   </div>
   <div class="modal-footer">
-  </div>
-</div>
