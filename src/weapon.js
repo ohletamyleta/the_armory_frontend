@@ -23,10 +23,12 @@ class Weapon {
               <a href="${this.video_url}">See it in action!</a>
                <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
+
                  <button type="button" class="btn btn-primary" data-id=${this.id}>Delete</button>
                 </div>
               </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -39,4 +41,5 @@ class Weapon {
   
 
 }
+
 Weapon.all = [];

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createWeaponForm.addEventListener('submit', (e) => createFormHandler(e) )
 
+
   const deleteWeaponTrigger = document.querySelector('#weapon-container')
   
   deleteWeaponTrigger.addEventListener("click", (e) => deleteWeapon(e))
@@ -20,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortBySharp = document.querySelector('#sharps')
 
   sortBySharp.addEventListener("click", (e) => sortSharps(e))
+
+
 
  
 });
@@ -91,7 +94,8 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
    document.getElementById("create-weapon-form").reset();
   }
     
-  function deleteWeapon(e) {
+
+function deleteWeapon(e) {
 
     const id = parseInt(e.target.dataset.id);
     const weapon = Weapon.findById(id);
@@ -127,4 +131,5 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
 }
      
  
+
 
