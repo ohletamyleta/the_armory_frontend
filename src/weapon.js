@@ -37,9 +37,8 @@ class Weapon {
   }
 
 
-  static findById = (id) => {
-    return this.all.find((weapon) => parseInt(weapon.id) === id);
-  };
+  static findById = (id) => this.all.find((weapon) => parseInt(weapon.id) === id);
+  
 
 }
 

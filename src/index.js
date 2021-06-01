@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
   deleteWeaponTrigger.addEventListener("click", (e) => deleteWeapon(e))
 
+  const sortBySharp = document.querySelector('#sharps')
+
+  sortBySharp.addEventListener("click", (e) => sortSharps(e))
+
+
 
  
 });
@@ -37,17 +42,18 @@ function getWeapons() {
 
 function getCategories() {
   fetch("http://localhost:3000/api/v1/categories")
-    .then((res) => res.json())
-    .then(data => console.log(data))
-    .then((categories) => {
+    .then(res => res.json())
+    
+    // .then(data => console.log(data))
+
+    .then(categories => {
       categories.data.forEach(category => {
 
-        const newCategory = new Category(category.id, category.attributes)
 
         let sel = document.getElementById('categories');
         let opt = document.createElement('option');
-        debugger;
-        opt.appendChild( document.createTextNode(category.name));
+        //debugger;
+        opt.appendChild( document.createTextNode(category.attributes.name));
         opt.value = category.id
         sel.appendChild(opt);
       
@@ -85,7 +91,7 @@ function postWeapon(name, description, video_url, image_url, origin, category_id
          "#weapon-container"
        ).innerHTML += newWeapon.renderWeaponCard();
      });
-     pageReload();
+   document.getElementById("create-weapon-form").reset();
   }
     
 
@@ -103,14 +109,27 @@ function deleteWeapon(e) {
       elem.parentNode.removeChild(elem);
       }
       deleteCard();
-      pageReload(true);
+     
       
      })
-    // 
-     
+
   }
 
+ function sortSharps() {
+  let weapons = Weapon.all
 
+  let sharps = weapons.filter(weapon => weapon.category.name === "Sharp")
 
+  document.querySelector('#weapon-container').innerHTML = "";
+
+  sharps.forEach(sharp => {
+  document.querySelector(
+         "#weapon-container"
+       ).innerHTML += sharp.renderWeaponCard();
+
+ })
+}
+     
+ 
 
 
